@@ -1,7 +1,5 @@
 @extends('layout')
-
 @section('content')
-
     <article>
         <?= $post->title ?>
         <div>
@@ -9,5 +7,4 @@
         </div>
     </article>
     <a href="/">Go back</a>
-
 @endsection
