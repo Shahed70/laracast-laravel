@@ -11,30 +11,11 @@
 </head>
 
 <body>
-    <article>
-        <a href="/posts/first-post">
-            <h1>Our first post</h1>
-        </a>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea praesentium labore explicabo impedit, quas aspernatur sequi totam? Libero delectus error deleniti quam labore minus quae repellat! Ipsum temporibus dicta, dolor est, voluptas autem dolorem iure impedit iusto ratione perferendis, vitae ut adipisci! Veritatis est minus vitae cupiditate labore fuga consequuntur.
-        </p>
-    </article>
-    <article>
-        <a href="/posts/second-post">
-            <h1>Our second post</h1>
-        </a>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea praesentium labore explicabo impedit, quas aspernatur sequi totam? Libero delectus error deleniti quam labore minus quae repellat! Ipsum temporibus dicta, dolor est, voluptas autem dolorem iure impedit iusto ratione perferendis, vitae ut adipisci! Veritatis est minus vitae cupiditate labore fuga consequuntur.
-        </p>
-    </article>
-    <article>
-        <a href="/posts/third-post">
-            <h1>Our third post</h1>
-        </a>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea praesentium labore explicabo impedit, quas aspernatur sequi totam? Libero delectus error deleniti quam labore minus quae repellat! Ipsum temporibus dicta, dolor est, voluptas autem dolorem iure impedit iusto ratione perferendis, vitae ut adipisci! Veritatis est minus vitae cupiditate labore fuga consequuntur.
-        </p>
-    </article>
+    <?php foreach ($posts as $post) : ?>
+        <article>
+            <?= $post; ?>
+        </article>
+    <?php endforeach ?>
 </body>
 
 </html>
