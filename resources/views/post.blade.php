@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <title>Document</title>
-    <style>
-    body{
-        max-width: 600px;
-        margin:0 auto;
-        line-height: 1.7;
-        font-family: sans-serif;
-    }
-</style>
-</head>
-<body>
+@extends('layout')
+@section('content')
 <article>
-        <!-- <a href="/post">
-            <h1>Our first post</h1>
-        </a>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea praesentium labore explicabo impedit, quas aspernatur sequi totam? Libero delectus error deleniti quam labore minus quae repellat! Ipsum temporibus dicta, dolor est, voluptas autem dolorem iure impedit iusto ratione perferendis, vitae ut adipisci! Veritatis est minus vitae cupiditate labore fuga consequuntur.
-        </p> -->
-        <?= $post; ?>
-    </article>
-    <a href="/">Go back</a>
-</body>
-</html>
+    <h1> <?= $post->title ?> </h1>
+    
+    <p>
+        By
+        <a href="/authors/{{$post->author->username}}"> {{$post->author->name}} </a>
+
+        in <a href="/categories/{{$post->category->slug}}">
+
+            {{$post->category->name}} </a>
+    </p>
+
+    <div>
+
+        <p>{!! $post->body !!} </p>
+
+    </div>
+
+</article>
+<a href="/">Go back</a>
+@endsection

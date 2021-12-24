@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <script src="app.js"></script>
-    <title>Document</title>
-</head>
+@section('content')
+@foreach ($posts as $post)
+<article>
+  <h1>
+    <a href="posts/{{$post->slug}}">
+      {{$post->title}}
 
-<body>
-    <?php foreach ($posts as $post) : ?>
-        <article>
-            <?= $post; ?>
-        </article>
-    <?php endforeach ?>
-</body>
+    </a>
+  </h1>
+  <p>
+        By
+        <a href="/authors/{{$post->author->username}}"> {{$post->author->name}} </a>
 
-</html>
+        in <a href="/categories/{{$post->category->slug}}">
+
+            {{$post->category->name}} </a>
+    </p>
+  <div>
+    <p>
+      {{$post->excerpt}}
+    </p>
+  </div>
+</article>
+<a href="/">Go back</a>
+@endforeach
+@endsection
