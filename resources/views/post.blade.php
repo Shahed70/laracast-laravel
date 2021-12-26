@@ -1,5 +1,4 @@
-@extends('layout')
-@section('content')
+<x-layout>
 <article>
     <h1> <?= $post->title ?> </h1>
     
@@ -13,11 +12,10 @@
     </p>
 
     <div>
-
         <p>{!! $post->body !!} </p>
-
     </div>
 
 </article>
 <a href="/">Go back</a>
-@endsection
+
+</x-layout>
